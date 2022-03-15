@@ -16,14 +16,17 @@ namespace CengaverRabbitMQ.Publisher
 
             var channel = connection.CreateModel();
 
-            channel.QueueDeclare("hello-queue", false, false, false);
+            //  channel.QueueDeclare("hello-queue", false, false, false);
+
+            channel.ExchangeDeclare("logs-fanout",durable:true,type:ExchangeType.Fanout);
+
             Enumerable.Range(1, 50).ToList().ForEach(x =>
             {
-                var message = $"{x}. Message";
+                var message = $"{x}. Log";
 
                 var messageBody = Encoding.UTF8.GetBytes(message);
 
-                channel.BasicPublish(string.Empty, "hello-queue", null, messageBody);
+                channel.BasicPublish("logs-fanout","" , null, messageBody);
 
                 Console.WriteLine($"{x}. Message sent successfully");
 

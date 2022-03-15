@@ -18,15 +18,22 @@ namespace UdemyRabbitMQ.Subscriber
 
             // channel.QueueDeclare("hello-queue", false, false, false);
 
-            channel.BasicQos(0,1,false);
+            channel.BasicQos(0, 1, false);
+
+            var randomQueueName = channel.QueueDeclare().QueueName;
+
+            // channel.QueueDeclare(randomQueueName, true, false, false);
+
+
+            channel.QueueBind(randomQueueName, "logs-fanout", "", null);
 
             var consumer = new EventingBasicConsumer(channel);
-            channel.BasicConsume("hello-queue", false, consumer);
-
+            channel.BasicConsume(randomQueueName, false, consumer);
+            Console.WriteLine("Listening logs");
             consumer.Received += (object sender, BasicDeliverEventArgs e) =>
              {
                  var message = Encoding.UTF8.GetString(e.Body.ToArray());
-                 
+
                  Console.WriteLine($"Message is: {message}");
                  Thread.Sleep(1500);
 
