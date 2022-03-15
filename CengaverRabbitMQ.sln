@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CengaverRabbitMQ.Publisher", "CengaverRabbitMQ.Publisher\CengaverRabbitMQ.Publisher.csproj", "{C231FE1A-E9BC-4A1D-BA21-B7146C17EBD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CengaverRabbitMQ.Publisher", "CengaverRabbitMQ.Publisher\CengaverRabbitMQ.Publisher.csproj", "{C231FE1A-E9BC-4A1D-BA21-B7146C17EBD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.Subscriber", "UdemyRabbitMQ.Subscriber\UdemyRabbitMQ.Subscriber.csproj", "{199DCF07-F8C4-4EF0-B106-26E94F0D8B5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CengaverRabbitMQ.Subscriber", "UdemyRabbitMQ.Subscriber\CengaverRabbitMQ.Subscriber.csproj", "{199DCF07-F8C4-4EF0-B106-26E94F0D8B5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
