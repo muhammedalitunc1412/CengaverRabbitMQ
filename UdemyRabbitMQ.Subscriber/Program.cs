@@ -1,11 +1,13 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
+using System.IO;
 using System.Text;
 using System.Threading;
 
 namespace UdemyRabbitMQ.Subscriber
 {
+   
     internal class Program
     {
         static void Main(string[] args)
@@ -20,22 +22,24 @@ namespace UdemyRabbitMQ.Subscriber
 
             channel.BasicQos(0, 1, false);
 
-            var randomQueueName = channel.QueueDeclare().QueueName;
+            //var randomQueueName = channel.QueueDeclare().QueueName;
 
             // channel.QueueDeclare(randomQueueName, true, false, false);
 
 
-            channel.QueueBind(randomQueueName, "logs-fanout", "", null);
+          //  channel.QueueBind(randomQueueName, "logs-fanout", "", null);
 
             var consumer = new EventingBasicConsumer(channel);
-            channel.BasicConsume(randomQueueName, false, consumer);
+            var queueName = "direct-queue-Critical";
+            channel.BasicConsume(queueName, false, consumer);
             Console.WriteLine("Listening logs");
             consumer.Received += (object sender, BasicDeliverEventArgs e) =>
              {
                  var message = Encoding.UTF8.GetString(e.Body.ToArray());
 
                  Console.WriteLine($"Message is: {message}");
-                 Thread.Sleep(1500);
+
+                 File.AppendAllText("log-critical.txt",message+"\n");
 
                  channel.BasicAck(e.DeliveryTag, false);
              };

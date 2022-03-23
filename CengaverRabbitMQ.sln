@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CengaverRabbitMQ.Publisher"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CengaverRabbitMQ.Subscriber", "UdemyRabbitMQ.Subscriber\CengaverRabbitMQ.Subscriber.csproj", "{199DCF07-F8C4-4EF0-B106-26E94F0D8B5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CengaverRabbitMQ.WatermarkApp", "CengaverRabbitMQ.WatermarkApp\CengaverRabbitMQ.WatermarkApp.csproj", "{6DFAABE0-4A71-49C5-BCD7-4C5CF72A448A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{199DCF07-F8C4-4EF0-B106-26E94F0D8B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{199DCF07-F8C4-4EF0-B106-26E94F0D8B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{199DCF07-F8C4-4EF0-B106-26E94F0D8B5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFAABE0-4A71-49C5-BCD7-4C5CF72A448A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFAABE0-4A71-49C5-BCD7-4C5CF72A448A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFAABE0-4A71-49C5-BCD7-4C5CF72A448A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFAABE0-4A71-49C5-BCD7-4C5CF72A448A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
