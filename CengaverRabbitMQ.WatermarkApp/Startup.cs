@@ -1,3 +1,4 @@
+using CengaverRabbitMQ.WatermarkApp.BackgroundServices;
 using CengaverRabbitMQ.WatermarkApp.Models;
 using CengaverRabbitMQ.WatermarkApp.Services;
 using Microsoft.AspNetCore.Builder;
@@ -34,6 +35,7 @@ namespace CengaverRabbitMQ.WatermarkApp
             {
                 options.UseInMemoryDatabase(databaseName: "productDb");
             });
+            services.AddHostedService<ImageWatermarkProcessBackgroundService>();
             services.AddControllersWithViews();
         }
 
